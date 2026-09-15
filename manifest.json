@@ -2,7 +2,7 @@
   "name": "一步",
   "short_name": "一步",
   "description": "每天只推进一步。打开就能学，不用自己排计划。",
-  "start_url": "./today-demo.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

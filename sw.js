@@ -1,7 +1,7 @@
-const CACHE_NAME = "yibu-v1";
+const CACHE_NAME = "yibu-v2";
 const ASSETS = [
   "./",
-  "./today-demo.html",
+  "./index.html",
   "./manifest.json",
   "./icon-192.png",
   "./icon-512.png",
