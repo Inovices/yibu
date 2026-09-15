@@ -22,7 +22,7 @@
 python -m http.server 8080
 ```
 
-然后访问 `http://localhost:8080/today-demo.html`。
+然后访问 `http://localhost:8080/`。
 
 ## 说明
 
