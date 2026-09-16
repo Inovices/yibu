@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#2f6b4f" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/png" href="icon-192.png" />
@@ -952,20 +952,85 @@
       }
 
       .status {
-        height: calc(34px + env(safe-area-inset-top));
-        padding-top: calc(10px + env(safe-area-inset-top));
+        display: none;
       }
 
       .top {
-        padding-inline: 18px;
+        order: 1;
+        min-height: 42px;
+        padding: calc(8px + env(safe-area-inset-top)) 18px 6px;
+        align-items: center;
+      }
+
+      .top .brand {
+        display: none;
+      }
+
+      .date-chip {
+        font-size: 11px;
+        line-height: 1.3;
+      }
+
+      .date-chip strong {
+        font-size: 12px;
       }
 
       .source {
-        padding-inline: 16px;
+        order: 3;
+        margin: 0 16px 12px;
+        padding-inline: 0;
       }
 
       .scroll {
+        order: 2;
         padding-inline: 16px;
+      }
+
+      .tabbar {
+        order: 4;
+      }
+
+      /* 移动端首屏：减少装饰性留白，让今日学习内容更早出现 */
+      .status {
+        height: calc(30px + env(safe-area-inset-top));
+        padding-top: calc(7px + env(safe-area-inset-top));
+      }
+
+      .top {
+        padding-top: 5px;
+        padding-bottom: 4px;
+      }
+
+      .scroll {
+        padding-top: 6px;
+        padding-bottom: calc(96px + env(safe-area-inset-bottom));
+      }
+
+      .streak {
+        display: none;
+      }
+
+      .streak-dot {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+      }
+
+      .focus {
+        padding: 16px 14px 14px;
+        margin-bottom: 8px;
+        border-radius: 24px;
+      }
+
+      .focus h2 {
+        font-size: 23px;
+        line-height: 1.2;
+      }
+
+      .focus .desc {
+        font-size: 13px;
+        line-height: 1.55;
+        margin-bottom: 12px;
       }
     }
   </style>
@@ -992,14 +1057,6 @@
         <strong id="dateStrong">3/23 周一</strong>
         跟着你的节奏走
       </div>
-    </div>
-
-    <div class="source">
-      <div class="search-box">
-        <input id="topicInput" type="text" placeholder="输入想学的东西，例如：学 Agent、学吉他" />
-        <button id="searchBtn" type="button">生成</button>
-      </div>
-      <div class="search-hint" id="searchHint">内置「学 Agent」可直接用；其他主题走 AI 生成</div>
     </div>
 
     <div class="scroll">
@@ -1056,6 +1113,14 @@
 
       <div class="why" id="whyText">
         <strong>为什么是这一步：</strong>你还在入口阶段。先建立正确心智模型，后面做工具调用才不会瞎练。
+      </div>
+
+      <div class="source">
+        <div class="search-box">
+          <input id="topicInput" type="text" placeholder="想学什么？例如：Agent" />
+          <button id="searchBtn" type="button">生成</button>
+        </div>
+        <div class="search-hint" id="searchHint">内置「学 Agent」可直接用；其他主题走 AI 生成</div>
       </div>
     </div>
 
